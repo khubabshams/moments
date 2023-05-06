@@ -8,6 +8,7 @@ import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import axios from "axios";
+import Post from "./Post";
 
 function PostPage() {
 
@@ -17,11 +18,11 @@ function PostPage() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: post }, {data: comments}] = await Promise.all([
+                const [{ data: post }, { data: comments }] = await Promise.all([
                     axiosReq.get(`/posts/${id}`),
                     axios.get(`/comments/?post=${id}`)
                 ])
-                setPost({results: [post]})
+                setPost({ results: [post] })
                 console.log(post)
             } catch (err) {
                 console.log(err)
@@ -34,7 +35,7 @@ function PostPage() {
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 <p>Popular profiles for mobile</p>
-                <p>Post component</p>
+                <Post {...post.results[0]} setPosts={setPost} postPage />
                 <Container className={appStyles.Content}>
                     Comments
                 </Container>
