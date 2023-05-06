@@ -56,14 +56,14 @@ const Post = (props) => {
                     <span onClick={() => { }}>
                         <i className={`far fa-heart ${styles.HeartOutline}`} />
                     </span>
-                ) :(
+                ) : (
                     <OverlayTrigger placement='top' overlay={<Tooltip>Log in to like posts!</Tooltip>}>
                         <i className='far fa-heart' />
                     </OverlayTrigger>
                 )}
                 {likes_count}
                 <Link to={`/posts/${id}`}>
-                    <i className='far fa-comments'/>
+                    <i className='far fa-comments' />
                 </Link>
                 {comments_count}
             </div>
