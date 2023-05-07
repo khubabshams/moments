@@ -67,7 +67,7 @@ function PostsPage({ message, filter = "" }) {
                                     ))
                                 }
                                 dataLength={posts.results.length}
-                                loadder={<Asset spinner />}
+                                loader={<Asset spinner />}
                                 hasMore={!!posts.next}
                                 next={() => fetchMoreData(posts, setPosts)}
                             />
