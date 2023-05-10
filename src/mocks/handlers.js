@@ -1,3 +1,5 @@
+import { rest } from "msw";
+
 const baseURL = "https://moments23.herokuapp.com/"
 
 export const handlers = [
